@@ -4,6 +4,7 @@ import styles from "./EpisodeScreen.styles";
 import { removeTags } from "../../utils/utils";
 const DefaultImage = require('../../assets/Images/no-image-available.png');
 
+//Simple screen that shows Episode info, no https requests are needed
 const EpisodeScreen = ({ route }) => {
   const { episode } = route.params; // Assume you pass the episode data as a navigation parameter
 

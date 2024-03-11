@@ -5,7 +5,7 @@ import styles from "./SearchScreen.styles";
 
 import ImageSquare from "../../components/ImageComponent/ImageSquare";
 import LoaderComponent from "../../components/LoaderComponent/LoaderComponent";
-
+//This screen is similar to HomeScreen but with a search input at the top, could have probably made a single screen with both functionalities
 const SearchScreen = ({ navigation }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [shows, setShows] = useState([]);
@@ -22,6 +22,7 @@ const SearchScreen = ({ navigation }) => {
         });
   },[searchQuery]);
 
+  //Added loader manually since onEndReached and onRefresh are not needed here
   return (
     <View style={styles.container}>
       <TextInput

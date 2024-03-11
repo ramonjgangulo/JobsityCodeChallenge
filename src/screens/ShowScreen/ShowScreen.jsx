@@ -40,9 +40,14 @@ const ShowScreen = ({route, navigation}) => {
         setEpisodes(parsedEpisodes);
         setLoading(false);
       });
+    /*
+      Parsing the episodes was a little annoying, since the underscore method groupBy returns a javascript object instead of an array,
+      and the SectionList Component requires you provide the data in a  very specific structure. probably could've avoided this by
+      running https requests getting all the episodes of each season, but wanted to optimize data traffic
+    */
   }, []);
 
-  const renderEpisode = ({ item } ) => {
+  const renderEpisode = ({ item }) => {
     return (
       <TouchableOpacity style={styles.episodeContainer} onPress={()=> navigation.navigate('EpisodeDetails', {episode: item})}>
         <Text style={styles.episodeNumber}>{`Episode ${item.number}: `}<Text style={styles.episodeTitle}>{item.name}</Text></Text>
