@@ -5,14 +5,14 @@ export function mapObject(obj, iteratee) {
   let currentKey;
   for (let index = 0; index < length; index++) {
     currentKey = _keys[index];
-    results.push(iteratee(obj[currentKey], currentKey, obj))
+    results.push(iteratee(obj[currentKey], currentKey, obj));
   }
   return results;
 }
 
 
 export function removeTags(str) {
-  if ((str === null) || (str === ''))
+  if (str === null || str === '')
     return false;
   else
     str = str.toString();
